@@ -419,6 +419,37 @@
             return vaga.jornada || '-';
         }
 
+        function getJornadaHTML(vaga) {
+            if (vaga.jornada === 'Outro') {
+                let t1 = formatTimeStr(vaga.c1_i1, vaga.c1_f1, vaga.c1_i2, vaga.c1_f2);
+                let p1 = t1 ? `${vaga.custom_dias1} ${t1}` : '';
+                
+                let t2 = formatTimeStr(vaga.c2_i1, vaga.c2_f1, '', '');
+                let p2 = (vaga.custom_dias2 && t2) ? `${vaga.custom_dias2} ${t2}` : '';
+                
+                if (p1 && p2) {
+                    return `${p1}<br><span class="block mt-1 text-sm font-bold text-emerald-700">${p2}</span>`;
+                }
+                return p1 || p2 || 'A definir';
+            }
+            
+            let j = vaga.jornada || '-';
+            
+            // Quebra a linha e adiciona um estilo antes dos horários de final de semana/turno secundário
+            if (j.includes(' Sáb ')) {
+                j = j.replace(' Sáb ', '<br><span class="block mt-1 text-sm font-bold text-emerald-700">Sáb ');
+                j += '</span>';
+            } else if (j.includes(' sáb ')) {
+                j = j.replace(' sáb ', '<br><span class="block mt-1 text-sm font-bold text-emerald-700">sáb ');
+                j += '</span>';
+            } else if (j.includes(' Sex ') && j.startsWith('Seg á Qui')) {
+                j = j.replace(' Sex ', '<br><span class="block mt-1 text-sm font-bold text-emerald-700">Sex ');
+                j += '</span>';
+            }
+            
+            return j;
+        }
+
         function copyToSocial(index) {
             const vaga = vagas[index];
             const horarioFormatado = getJornadaString(vaga);
@@ -613,7 +644,7 @@
                                 <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm border border-slate-100 text-emerald-600 shrink-0"><i data-lucide="clock" class="w-6 h-6"></i></div>
                                 <div class="min-w-0 flex-1 text-left">
                                     <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Jornada de Trabalho</span>
-                                    <p class="text-base font-semibold text-slate-700 leading-relaxed">${getJornadaString(vaga)}</p>
+                                    <p class="text-base font-semibold text-slate-700 leading-relaxed">${getJornadaHTML(vaga)}</p>
                                 </div>
                             </div>
                         </div>
