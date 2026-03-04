@@ -131,11 +131,12 @@
             color: white;
             font-size: 10px;
             font-weight: 800;
-            padding: 2px 8px;
+            padding: 2px 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-left: 10px;
             vertical-align: middle;
+            border-radius: 9999px;
         }
 
         optgroup {
@@ -162,9 +163,9 @@
                     <i data-lucide="settings-2" class="w-6 h-6"></i>
                     Painel de Controle
                 </h2>
-                <button id="btn-download" onclick="downloadPDF()" class="bg-fazenda-brand text-white min-w-[140px] px-4 py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all active:scale-95 shadow-md">
-                    <i data-lucide="file-down" class="w-4 h-4"></i>
-                    <span id="btn-text">Baixar PDF</span>
+                <button id="btn-download" onclick="downloadImage()" class="bg-fazenda-brand text-white min-w-[140px] px-4 py-2.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all active:scale-95 shadow-md">
+                    <i data-lucide="image" class="w-4 h-4"></i>
+                    <span id="btn-text">Baixar Imagem</span>
                 </button>
             </div>
 
@@ -232,43 +233,39 @@
                     <div class="mt-20 text-center text-slate-800">
                         <p class="text-slate-400 text-[10px] uppercase tracking-[0.2em] mb-6 font-bold">Canais oficiais de candidatura</p>
                         
-                        <div class="bg-slate-50 rounded-none border border-slate-100 p-8 md:p-12 space-y-8 text-slate-800 text-slate-800">
-                            <div class="flex items-start gap-6 text-left text-slate-800 text-slate-800">
+                        <div class="bg-slate-50 rounded-none border border-slate-100 p-8 md:p-12 space-y-8 text-slate-800">
+                            <div class="flex items-start gap-6 text-left text-slate-800">
                                 <div class="icon-box w-14 h-14 rounded-none bg-white shadow-sm border border-slate-100 text-emerald-600">
                                     <i data-lucide="map-pin" class="w-7 h-7"></i>
                                 </div>
                                 <div class="min-w-0 flex-1 text-slate-800">
-                                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800">Unidade de Atendimento</span>
-                                    <p id="display-endereco" class="text-base font-semibold text-slate-700 leading-relaxed text-slate-800 text-slate-800"></p>
+                                    <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Unidade de Atendimento</span>
+                                    <p id="display-endereco" class="text-base font-semibold text-slate-700 leading-relaxed"></p>
                                 </div>
                             </div>
 
                             <div class="h-px bg-slate-200 w-full opacity-60"></div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-slate-800">
-                                <div class="flex items-center gap-6 text-left text-slate-800 text-slate-800">
+                                <div class="flex items-center gap-6 text-left text-slate-800">
                                     <div class="icon-box w-14 h-14 rounded-none bg-white shadow-sm border border-slate-100 text-emerald-600">
                                         <i data-lucide="mail" class="w-7 h-7"></i>
                                     </div>
                                     <div class="min-w-0 flex-1 text-slate-800">
-                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800">E-mail</span>
-                                        <p id="display-email" class="text-base font-semibold text-slate-700 break-all text-slate-800"></p>
+                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1">E-mail</span>
+                                        <p id="display-email" class="text-base font-semibold text-slate-700 break-all"></p>
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-6 text-left text-slate-800 text-slate-800">
+                                <div class="flex items-center gap-6 text-left text-slate-800">
                                     <div class="icon-box w-14 h-14 rounded-none bg-white shadow-sm border border-slate-100 text-emerald-600">
                                         <i data-lucide="phone" class="w-7 h-7"></i>
                                     </div>
-                                    <div class="min-w-0 flex-1 text-slate-800 text-slate-800 text-slate-800">
-                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800">WhatsApp</span>
-                                        <p id="display-telefone" class="text-base font-semibold text-slate-700 text-slate-800 text-slate-800"></p>
+                                    <div class="min-w-0 flex-1 text-slate-800">
+                                        <span class="text-[11px] font-bold text-slate-400 uppercase tracking-widest block mb-1">WhatsApp</span>
+                                        <p id="display-telefone" class="text-base font-semibold text-slate-700"></p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="mt-16 opacity-30 flex justify-center text-slate-800">
-                            <img src="https://i.imgur.com/PFLB86Z.png" alt="Footer Logo" class="h-12 grayscale" crossOrigin="anonymous">
                         </div>
                     </div>
                 </div>
@@ -277,8 +274,6 @@
                 <div class="official-footer-bar">
                     <div class="official-footer-text">
                         <span>SPG Sede</span>
-                        <span class="footer-dot"></span>
-                        <span>DADOS OFICIAIS</span>
                     </div>
                 </div>
             </div>
@@ -299,7 +294,8 @@
                 "Seg á Sex 7h-11h30 13h-16h30 Sáb 7h-11h",
                 "Seg á Sex 7h-11h 12h-16h Sáb 7h-11h",
                 "Seg á Qui 8h-11h 12h-18h Sex 8h-17h",
-                "Seg á Sex 6h-11h 12h-15h Sáb 6h-10h"
+                "Seg á Sex 6h-11h 12h-15h Sáb 6h-10h",
+                "Seg á Sex 6hr - 11hr - 12hr- 15hr sáb 06hr a 10hr"
             ],
             "Escalas e Turnos": [
                 "Escala 6x1 - 6h-11h 12h-18h",
@@ -322,6 +318,10 @@
             titulo: "Auxiliar de Escritório",
             local: localidadesSPG[1].value,
             jornada: "Seg á Sex 7h-11h30 13h-16h30 Sáb 7h-11h",
+            custom_dias1: "Seg á Sex",
+            c1_i1: "", c1_f1: "", c1_i2: "", c1_f2: "",
+            custom_dias2: "",
+            c2_i1: "", c2_f1: "",
             funcao: "Apoio administrativo e logístico da unidade.",
             requirements: "Ensino Médio completo e informática básica.",
             diferencial: "Mínimo 1 ano de experiência.",
@@ -330,19 +330,19 @@
             urgente: false
         }];
 
-        async function downloadPDF() {
-            const { jsPDF } = window.jspdf;
+        async function downloadImage() {
             const element = document.getElementById('banner-preview');
             const btn = document.getElementById('btn-download');
             const btnText = document.getElementById('btn-text');
             
             btn.disabled = true;
-            btnText.innerText = "A processar...";
+            btnText.innerText = "Gerando Imagem...";
 
             try {
                 const canvas = await html2canvas(element, {
                     scale: 2, 
                     useCORS: true, 
+                    allowTaint: true,
                     logging: false,
                     backgroundColor: "#ffffff",
                     onclone: (clonedDoc) => {
@@ -364,39 +364,65 @@
                             el.style.backgroundColor = '#f1f5f9';
                             el.style.borderTop = '2px solid #e2e8f0';
                         });
-
-                        clonedDoc.querySelectorAll('.footer-dot').forEach(el => {
-                            el.style.display = 'inline-block';
-                            el.style.backgroundColor = '#cbd5e1';
-                        });
                     }
                 });
 
                 const imgData = canvas.toDataURL('image/png', 1.0);
-                const imgWidth = canvas.width;
-                const imgHeight = canvas.height;
-
-                const pdf = new jsPDF({
-                    orientation: 'p',
-                    unit: 'px',
-                    format: [imgWidth, imgHeight]
-                });
-
-                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-                pdf.save(`Anuncio-SPG-Recrutamento.pdf`);
+                
+                const now = new Date();
+                const day = String(now.getDate()).padStart(2, '0');
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const year = now.getFullYear();
+                
+                const filename = `Anuncio-SPG-Recrutamento-${day}-${month}-${year}.png`;
+                
+                const link = document.createElement('a');
+                link.href = imgData;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
 
             } catch (err) {
-                console.error("Erro no PDF:", err);
+                console.error("Erro ao gerar imagem:", err);
             } finally {
                 btn.disabled = false;
-                btnText.innerText = "Baixar PDF";
+                btnText.innerText = "Baixar Imagem";
                 lucide.createIcons();
             }
         }
 
+        function fTime(t) {
+            if(!t) return '';
+            if(t.endsWith(':00')) return t.substring(0,2) + 'h';
+            return t.replace(':', 'h');
+        }
+
+        function formatTimeStr(i1, f1, i2, f2) {
+            let parts = [];
+            if (i1 && f1) parts.push(`${fTime(i1)} às ${fTime(f1)}`);
+            if (i2 && f2) parts.push(`${fTime(i2)} às ${fTime(f2)}`);
+            return parts.join(' e ');
+        }
+
+        function getJornadaString(vaga) {
+            if (vaga.jornada === 'Outro') {
+                let t1 = formatTimeStr(vaga.c1_i1, vaga.c1_f1, vaga.c1_i2, vaga.c1_f2);
+                let p1 = t1 ? `${vaga.custom_dias1} ${t1}` : '';
+                
+                let t2 = formatTimeStr(vaga.c2_i1, vaga.c2_f1, '', '');
+                let p2 = (vaga.custom_dias2 && t2) ? `${vaga.custom_dias2} ${t2}` : '';
+                
+                let res = [p1, p2].filter(Boolean).join(' | ');
+                return res || 'A definir';
+            }
+            return vaga.jornada || '-';
+        }
+
         function copyToSocial(index) {
             const vaga = vagas[index];
-            const text = `🚀 *ESTAMOS CONTRATANDO!* 🚀\n\n💼 *Cargo:* ${vaga.titulo}\n📍 *Local:* ${vaga.local}\n⏰ *Horário:* ${vaga.jornada}\n\n📝 *Atividades:* ${vaga.funcao}\n🎓 *Requisitos:* ${vaga.requirements}\n\n⏳ *Candidaturas até:* ${formatDisplayDate(vaga.prazoEnvio)}\n📧 *Enviar para:* ${document.getElementById('global-email').value}\n\nSítio Pedra Grande (SPG)`;
+            const horarioFormatado = getJornadaString(vaga);
+            const text = `🚀 *ESTAMOS CONTRATANDO!* 🚀\n\n💼 *Cargo:* ${vaga.titulo}\n📍 *Local:* ${vaga.local}\n⏰ *Horário:* ${horarioFormatado}\n\n📝 *Atividades:* ${vaga.funcao}\n🎓 *Requisitos:* ${vaga.requirements}\n\n⏳ *Candidaturas até:* ${formatDisplayDate(vaga.prazoEnvio)}\n📧 *Enviar para:* ${document.getElementById('global-email').value}\n\nSítio Pedra Grande (SPG)`;
             
             const textArea = document.createElement("textarea");
             textArea.value = text;
@@ -424,6 +450,10 @@
         function addVaga() {
             vagas.push({
                 titulo: "", local: localidadesSPG[0].value, jornada: "",
+                custom_dias1: "Seg á Sex", 
+                c1_i1: "", c1_f1: "", c1_i2: "", c1_f2: "", 
+                custom_dias2: "", 
+                c2_i1: "", c2_f1: "",
                 funcao: "", requirements: "", diferencial: "",
                 dataPublicacao: new Date().toISOString().split('T')[0], prazoEnvio: "",
                 urgente: false
@@ -438,6 +468,13 @@
 
         function handleInput(index, field, value) {
             vagas[index][field] = value;
+            if (field === 'custom_dias2') renderInputs();
+            updatePreview();
+        }
+
+        function handleJornadaSelect(index, value) {
+            vagas[index].jornada = value;
+            renderInputs();
             updatePreview();
         }
 
@@ -450,38 +487,93 @@
                     cargosCLT[cat].forEach(c => cargoOpts += `<option value="${c}" ${vaga.titulo === c ? 'selected' : ''}>${c}</option>`);
                     cargoOpts += `</optgroup>`;
                 }
+
+                let isOutroHorario = vaga.jornada === 'Outro';
+
                 let horarioOpts = '<option value="">Escolha...</option>';
                 for(let cat in horariosCLT) {
                     horarioOpts += `<optgroup label="${cat}">`;
-                    horariosCLT[cat].forEach(h => horarioOpts += `<option value="${h}" ${vaga.jornada === h ? 'selected' : ''}>${h}</option>`);
+                    horariosCLT[cat].forEach(h => {
+                        horarioOpts += `<option value="${h}" ${vaga.jornada === h ? 'selected' : ''}>${h}</option>`;
+                    });
                     horarioOpts += `</optgroup>`;
                 }
+                horarioOpts += `<option value="Outro" ${isOutroHorario ? 'selected' : ''}>Outro (Montar Personalizado...)</option>`;
+
                 let localOpts = localidadesSPG.map(loc => `<option value="${loc.value}" ${vaga.local === loc.value ? 'selected' : ''}>${loc.label}</option>`).join('');
 
                 return `
                 <div class="p-5 border border-slate-200 rounded-2xl bg-slate-50 relative text-slate-800">
-                    <div class="flex justify-between items-center mb-5 text-slate-800">
+                    <div class="flex justify-between items-center mb-5">
                         <span class="bg-fazenda-brand text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">VAGA #${index + 1}</span>
                         <div class="flex items-center gap-3">
                             <label class="flex items-center gap-2 text-[10px] font-bold text-red-600 uppercase cursor-pointer">
                                 <input type="checkbox" onchange="handleInput(${index}, 'urgente', this.checked)" ${vaga.urgente ? 'checked' : ''} class="w-3 h-3 accent-red-600"> Urgente
                             </label>
-                            ${vagas.length > 1 ? `<button onclick="removeVaga(${index})" class="text-slate-400 hover:text-red-500"><i data-lucide="trash-2" class="w-4 h-4 text-slate-800"></i></button>` : ''}
+                            ${vagas.length > 1 ? `<button onclick="removeVaga(${index})" class="text-slate-400 hover:text-red-500"><i data-lucide="trash-2" class="w-4 h-4"></i></button>` : ''}
                         </div>
                     </div>
-                    <div class="space-y-4 text-slate-800">
+                    <div class="space-y-4">
                         <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Cargo</label><select onchange="handleInput(${index}, 'titulo', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-sm bg-white text-slate-800">${cargoOpts}</select></div>
                         <div class="grid grid-cols-2 gap-4">
-                            <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Postado</label><input type="date" value="${vaga.dataPublicacao}" oninput="handleInput(${index}, 'dataPublicacao', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800 text-slate-800 text-slate-800"></div>
-                            <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1 text-slate-400">Prazo</label><input type="date" value="${vaga.prazoEnvio}" oninput="handleInput(${index}, 'prazoEnvio', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800 text-slate-800 text-slate-800"></div>
+                            <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Postado</label><input type="date" value="${vaga.dataPublicacao}" oninput="handleInput(${index}, 'dataPublicacao', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800"></div>
+                            <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Prazo</label><input type="date" value="${vaga.prazoEnvio}" oninput="handleInput(${index}, 'prazoEnvio', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800"></div>
                         </div>
-                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Local</label><select onchange="handleInput(${index}, 'local', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs bg-white text-slate-800 text-slate-800 text-slate-800">${localOpts}</select></div>
-                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Horário</label><select onchange="handleInput(${index}, 'jornada', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs bg-white text-slate-800 text-slate-800 text-slate-800">${horarioOpts}</select></div>
-                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Funções</label><textarea oninput="handleInput(${index}, 'funcao', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800 text-slate-800 text-slate-800" rows="2">${vaga.funcao}</textarea></div>
-                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Requisitos</label><textarea oninput="handleInput(${index}, 'requirements', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800 text-slate-800 text-slate-800" rows="2">${vaga.requirements}</textarea></div>
-                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Diferenciais</label><textarea oninput="handleInput(${index}, 'diferencial', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800 text-slate-800 text-slate-800" rows="2">${vaga.diferencial}</textarea></div>
+                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Local</label><select onchange="handleInput(${index}, 'local', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs bg-white text-slate-800">${localOpts}</select></div>
+                        <div>
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Horário</label>
+                            <select onchange="handleJornadaSelect(${index}, this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs bg-white text-slate-800">${horarioOpts}</select>
+                            ${isOutroHorario ? `
+                            <div class="mt-3 p-3 bg-slate-100/50 border border-slate-200 rounded-xl space-y-3">
+                                <div>
+                                    <label class="block text-[8px] font-bold text-slate-500 uppercase mb-1.5">Dias da Semana / Principal</label>
+                                    <div class="flex flex-col gap-2">
+                                        <select onchange="handleInput(${index}, 'custom_dias1', this.value)" class="p-2 border border-slate-200 rounded-lg text-xs bg-white text-slate-800 font-medium outline-none">
+                                            <option value="Seg á Sex" ${vaga.custom_dias1 === 'Seg á Sex' ? 'selected' : ''}>Seg á Sex</option>
+                                            <option value="Seg á Qui" ${vaga.custom_dias1 === 'Seg á Qui' ? 'selected' : ''}>Seg á Qui</option>
+                                            <option value="Seg á Sáb" ${vaga.custom_dias1 === 'Seg á Sáb' ? 'selected' : ''}>Seg á Sáb</option>
+                                            <option value="Escala 12x36" ${vaga.custom_dias1 === 'Escala 12x36' ? 'selected' : ''}>Escala 12x36</option>
+                                            <option value="Escala 6x1" ${vaga.custom_dias1 === 'Escala 6x1' ? 'selected' : ''}>Escala 6x1</option>
+                                        </select>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <div class="flex items-center gap-1 bg-white border border-slate-200 rounded-lg px-2 py-1 shadow-sm">
+                                                <input type="time" value="${vaga.c1_i1}" oninput="handleInput(${index}, 'c1_i1', this.value)" class="text-xs text-slate-800 outline-none bg-transparent w-[65px]">
+                                                <span class="text-[9px] text-slate-400 font-bold">ÀS</span>
+                                                <input type="time" value="${vaga.c1_f1}" oninput="handleInput(${index}, 'c1_f1', this.value)" class="text-xs text-slate-800 outline-none bg-transparent w-[65px]">
+                                            </div>
+                                            <span class="text-[10px] text-slate-400 font-bold">E (OPCIONAL)</span>
+                                            <div class="flex items-center gap-1 bg-white border border-slate-200 rounded-lg px-2 py-1 shadow-sm">
+                                                <input type="time" value="${vaga.c1_i2}" oninput="handleInput(${index}, 'c1_i2', this.value)" class="text-xs text-slate-800 outline-none bg-transparent w-[65px]">
+                                                <span class="text-[9px] text-slate-400 font-bold">ÀS</span>
+                                                <input type="time" value="${vaga.c1_f2}" oninput="handleInput(${index}, 'c1_f2', this.value)" class="text-xs text-slate-800 outline-none bg-transparent w-[65px]">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="h-px w-full bg-slate-200"></div>
+                                <div>
+                                    <label class="block text-[8px] font-bold text-slate-500 uppercase mb-1.5">Finais de Semana / Adicional</label>
+                                    <div class="flex flex-wrap items-center gap-2">
+                                        <select onchange="handleInput(${index}, 'custom_dias2', this.value)" class="p-2 border border-slate-200 rounded-lg text-xs bg-white text-slate-800 font-medium outline-none">
+                                            <option value="" ${!vaga.custom_dias2 ? 'selected' : ''}>Nenhum</option>
+                                            <option value="Sáb" ${vaga.custom_dias2 === 'Sáb' ? 'selected' : ''}>Sábados</option>
+                                            <option value="Dom" ${vaga.custom_dias2 === 'Dom' ? 'selected' : ''}>Domingos</option>
+                                            <option value="Sex" ${vaga.custom_dias2 === 'Sex' ? 'selected' : ''}>Sextas</option>
+                                        </select>
+                                        <div class="flex items-center gap-1 bg-white border border-slate-200 rounded-lg px-2 py-1 shadow-sm ${!vaga.custom_dias2 ? 'opacity-50 cursor-not-allowed bg-slate-50' : ''}">
+                                            <input type="time" value="${vaga.c2_i1}" oninput="handleInput(${index}, 'c2_i1', this.value)" class="text-xs text-slate-800 outline-none bg-transparent w-[65px]" ${!vaga.custom_dias2 ? 'disabled' : ''}>
+                                            <span class="text-[9px] text-slate-400 font-bold">ÀS</span>
+                                            <input type="time" value="${vaga.c2_f1}" oninput="handleInput(${index}, 'c2_f1', this.value)" class="text-xs text-slate-800 outline-none bg-transparent w-[65px]" ${!vaga.custom_dias2 ? 'disabled' : ''}>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>` : ''}
+                        </div>
+                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Funções</label><textarea oninput="handleInput(${index}, 'funcao', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800" rows="2">${vaga.funcao}</textarea></div>
+                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Requisitos</label><textarea oninput="handleInput(${index}, 'requirements', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800" rows="2">${vaga.requirements}</textarea></div>
+                        <div><label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Diferenciais</label><textarea oninput="handleInput(${index}, 'diferencial', this.value)" class="w-full p-2.5 border border-slate-200 rounded-xl text-xs text-slate-800" rows="2">${vaga.diferencial}</textarea></div>
                         <button onclick="copyToSocial(${index})" class="w-full py-2 bg-slate-200 hover:bg-emerald-100 text-slate-600 hover:text-emerald-700 text-[10px] font-bold uppercase rounded-xl flex items-center justify-center gap-2 transition-colors">
-                            <i data-lucide="share-2" class="w-3 h-3 text-slate-800"></i> Copiar para Redes Sociais
+                            <i data-lucide="share-2" class="w-3 h-3"></i> Copiar para Redes Sociais
                         </button>
                     </div>
                 </div>`;
@@ -496,64 +588,64 @@
 
             const displayContainer = document.getElementById('vagas-display-container');
             displayContainer.innerHTML = vagas.map((vaga, index) => `
-                <div class="vaga-item text-slate-800 text-slate-800">
-                    <h3 class="text-3xl font-bold text-fazenda-brand mb-8 uppercase tracking-tight flex items-center flex-wrap gap-4 text-slate-800 text-slate-800">
+                <div class="vaga-item text-slate-800">
+                    <h3 class="text-3xl font-bold text-fazenda-brand mb-8 uppercase tracking-tight flex items-center flex-wrap gap-4">
                         ${vaga.titulo || 'Cargo a Definir'}
-                        ${vaga.urgente ? '<span class="urgent-tag text-slate-800">Urgente</span>' : ''}
+                        ${vaga.urgente ? '<span class="urgent-tag">Urgente</span>' : ''}
                     </h3>
                     
-                    <div class="space-y-6 text-slate-800 text-slate-800 text-slate-800">
+                    <div class="space-y-6">
                         
-                        <div class="notice-container text-slate-800 text-slate-800">
-                            <div class="deadline-badge text-slate-800 text-slate-800 text-slate-800">Candidaturas até: ${formatDisplayDate(vaga.prazoEnvio)}</div>
-                            <div class="published-info text-slate-800 text-slate-800 text-slate-800">Oferta publicada em: ${formatDisplayDate(vaga.dataPublicacao)}</div>
+                        <div class="notice-container">
+                            <div class="deadline-badge">Candidaturas até: ${formatDisplayDate(vaga.prazoEnvio)}</div>
+                            <div class="published-info">Oferta publicada em: ${formatDisplayDate(vaga.dataPublicacao)}</div>
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-slate-800">
-                            <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100 text-slate-800 text-slate-800">
-                                <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm border border-slate-100 text-emerald-600 shrink-0 text-emerald-600"><i data-lucide="map-pin" class="w-6 h-6 text-emerald-600 text-slate-800"></i></div>
-                                <div class="min-w-0 flex-1 text-left text-slate-800">
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800 text-slate-800 text-slate-800">Local de Atuação</span>
-                                    <p class="text-base font-semibold text-slate-700 leading-relaxed text-slate-800 text-slate-800">${vaga.local || '-'}</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100">
+                                <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm border border-slate-100 text-emerald-600 shrink-0"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                                <div class="min-w-0 flex-1 text-left">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Local de Atuação</span>
+                                    <p class="text-base font-semibold text-slate-700 leading-relaxed">${vaga.local || '-'}</p>
                                 </div>
                             </div>
-                            <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100 text-slate-800 text-slate-800">
-                                <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm border border-slate-100 text-emerald-600 shrink-0 text-emerald-600"><i data-lucide="clock" class="w-6 h-6 text-emerald-600 text-slate-800"></i></div>
-                                <div class="min-w-0 flex-1 text-left text-slate-800">
-                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800 text-slate-800 text-slate-800 text-slate-800 text-slate-800">Jornada de Trabalho</span>
-                                    <p class="text-base font-semibold text-slate-700 leading-relaxed text-slate-800 text-slate-800">${vaga.jornada || '-'}</p>
+                            <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100">
+                                <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm border border-slate-100 text-emerald-600 shrink-0"><i data-lucide="clock" class="w-6 h-6"></i></div>
+                                <div class="min-w-0 flex-1 text-left">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Jornada de Trabalho</span>
+                                    <p class="text-base font-semibold text-slate-700 leading-relaxed">${getJornadaString(vaga)}</p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100 text-left text-slate-800">
-                            <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm shrink-0 border border-slate-100 text-emerald-600 text-slate-800"><i data-lucide="briefcase" class="w-6 h-6 text-emerald-600 text-slate-800"></i></div>
-                            <div class="min-w-0 flex-1 text-left text-slate-800 text-slate-800 text-slate-800 text-slate-800">
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800 text-slate-800">Principais Funções</span>
-                                <p class="text-base font-medium text-slate-700 leading-relaxed text-slate-800 text-slate-800">${vaga.funcao || '-'}</p>
+                        <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100 text-left">
+                            <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm shrink-0 border border-slate-100 text-emerald-600"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
+                            <div class="min-w-0 flex-1 text-left">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Principais Funções</span>
+                                <p class="text-base font-medium text-slate-700 leading-relaxed">${vaga.funcao || '-'}</p>
                             </div>
                         </div>
                         
-                        <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100 text-left text-slate-800 text-slate-800 text-slate-800">
-                            <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm shrink-0 border border-slate-100 text-emerald-600 text-slate-800"><i data-lucide="graduation-cap" class="w-6 h-6 text-emerald-600 text-slate-800"></i></div>
-                            <div class="min-w-0 flex-1 text-left text-slate-800 text-slate-800 text-slate-800 text-slate-800">
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800 text-slate-800 text-slate-800">Requisitos</span>
-                                <p class="text-base font-medium text-slate-700 leading-relaxed text-slate-800 text-slate-800">${vaga.requirements || '-'}</p>
+                        <div class="flex items-start gap-5 p-5 bg-slate-50 border border-slate-100 text-left">
+                            <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm shrink-0 border border-slate-100 text-emerald-600"><i data-lucide="graduation-cap" class="w-6 h-6"></i></div>
+                            <div class="min-w-0 flex-1 text-left">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block mb-1">Requisitos</span>
+                                <p class="text-base font-medium text-slate-700 leading-relaxed">${vaga.requirements || '-'}</p>
                             </div>
                         </div>
 
                         ${vaga.diferencial ? `
-                        <div class="flex gap-5 p-5 bg-emerald-50/30 rounded-none border border-emerald-100/50 text-left text-slate-800 text-slate-800 text-slate-800">
-                            <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm shrink-0 text-amber-500 text-amber-500 text-slate-800"><i data-lucide="star" class="w-6 h-6 text-slate-800 text-slate-800 text-slate-800"></i></div>
-                            <div class="min-w-0 flex-1 text-left text-slate-800 text-slate-800 text-slate-800 text-slate-800">
-                                <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-widest block mb-1 text-slate-400 text-slate-800 text-slate-800">Diferencial</span>
-                                <p class="text-base font-bold text-emerald-900 leading-relaxed text-slate-800 text-slate-800 text-slate-800">${vaga.diferencial}</p>
+                        <div class="flex gap-5 p-5 bg-emerald-50/30 rounded-none border border-emerald-100/50 text-left">
+                            <div class="icon-box w-12 h-12 bg-white rounded-none shadow-sm shrink-0 text-amber-500"><i data-lucide="star" class="w-6 h-6"></i></div>
+                            <div class="min-w-0 flex-1 text-left">
+                                <span class="text-[10px] font-bold text-emerald-700 uppercase tracking-widest block mb-1">Diferencial</span>
+                                <p class="text-base font-bold text-emerald-900 leading-relaxed">${vaga.diferencial}</p>
                             </div>
                         </div>
                         ` : ''}
                     </div>
                 </div>
-            `).join('<hr class="border-slate-100 my-12 text-slate-800 text-slate-800">');
+            `).join('<hr class="border-slate-100 my-12">');
             lucide.createIcons();
         }
 
